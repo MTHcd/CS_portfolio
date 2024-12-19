@@ -1,0 +1,14 @@
+To generate the IPv6 link local address using the EUI-64 method, you need to follow these steps:
+
+1.Split the MAC address into two halves: The MAC address CA00.0E74.0008 consists of three hexadecimal numbers, separated by dots. To generate the IPv6 link local address, you need to split the MAC address into two halves, as follows:
+First half: CA00
+Second half: 0E74.0008
+2.Insert "FFFE" between the two halves: The next step is to insert the string "FFFE" between the two halves of the MAC address, as follows:
+First half: CA00
+Second half: FFFE
+Third half: 0E74.0008
+3.Invert the 7th bit of the third half: The third half of the MAC address (0E74.0008) consists of two hexadecimal numbers, separated by a dot. The 7th bit of the third half (bit 6, counting from 0) is a 0. To generate the IPv6 link local address, you need to invert this bit, which means changing it from a 0 to a 1. The third half of the MAC address becomes:
+Third half: 8E74.0008
+4.Prefix the address with "FE80::": The final step is to prefix the address with "FE80::". The resulting IPv6 link local address is:
+IPv6 link local address: FE80::CA00:FFFE:8E74.0008
+Overall, the EUI-64 method is a simple process that involves splitting the MAC address into two halves, inserting "FFFE" between the two halves, inverting the 7th bit of the third half, and prefixing the address with "FE80::". This process generates a unique IPv6 link local address that can be used to identify and communicate with a device on a network.
